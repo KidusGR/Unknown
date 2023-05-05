@@ -13,6 +13,7 @@ spell = SpellChecker()
 alpha = "abcdefghijklmnopqrstuvwxyz"
 check = 0
 
+
 def printBanner():
 	banner = Text(("-"*40)+"\n\tUNKNOWN WORD BARN\n"+("-"*40))
 	commands = Text("\n'exit()' -- exit\n'print()' -- print words(db)\n")
@@ -20,17 +21,21 @@ def printBanner():
 	commands.stylize("bold blue")
 	console.print(banner+commands)
 
+
 def spellcheck(word):
-	line = Text(f"spelling incorrect\nsuggestions : {spell.candidates(word)}\n")
+	line = Text("\tWord Unknown\n")
+	line1 = Text(f"suggestions : {spell.candidates(word)}\n")
+	line1.stylize("bold yellow")
 	line.stylize("bold red")
 	os.system('clear')
 	if word in spell:
 		adder(word)
 	else:
-		console.print(line)
+		console.print(line,line1)
+
 
 def printInvalid():
-	line = Text("invalid input!\n")
+	line = Text("\tINVALID INPUT!\n")
 	line.stylize("bold red")
 	os.system('clear')
 	console.print(line)
@@ -41,14 +46,15 @@ def adder(word):
 		with open("./Data/words", "a") as file:
 			file.write(f"{word.lower()}\n")
 		os.system('clear')
-		addedLine = Text("word added to db\n")
+		addedLine = Text("\tWord added to the DB\n")
 		addedLine.stylize("bold green")
 		console.print(addedLine)
 	else:
 		os.system('clear')
-		alreadyLine = Text("word already in db\n")
+		alreadyLine = Text("\tWord is already in the DB\n")
 		alreadyLine.stylize("bold yellow")
 		console.print(alreadyLine)
+
 
 def exit():
 	os.system('clear')
@@ -57,11 +63,13 @@ def exit():
 	console.print(line)
 	time.sleep(1)
 
+
 def printer():
 	os.system('clear')
 	line = Text(f"db : {words}\n")
 	line.stylize("bold yellow")
 	console.print(line)
+
 
 while True:
 	words = [d.strip() for d in open("./Data/words", "r").readlines()]
