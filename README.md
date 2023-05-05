@@ -3,7 +3,7 @@ Please follow the instruction carefully
 
 ```
 git clone https://github.com/KidusGR/Unknown.git
-cd Unknown
+cd Unknown/
 ./install.sh
 ```
 run Unknown:
