@@ -4,7 +4,7 @@ Please follow the instruction carefully
 ```
 git clone https://github.com/KidusGR/Unknown.git
 cd Unknown
-chmod u+x Unknown.py
+./install.sh
 ```
 run Unknown:
 
