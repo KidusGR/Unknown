@@ -51,7 +51,7 @@ def adder(word):
 		console.print(addedLine)
 	else:
 		os.system('clear')
-		alreadyLine = Text("\tWord is already in the DB\n")
+		alreadyLine = Text("\tWord already in the DB\n")
 		alreadyLine.stylize("bold yellow")
 		console.print(alreadyLine)
 
