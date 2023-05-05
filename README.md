@@ -11,9 +11,11 @@ run Unknown as Unknown.py:
 
 	Unknown
 
-```diff
-- text in red
+```
+```html
+    // color="green"
 ----------------------------------------
+```
         UNKNOWN WORD BARN
 ----------------------------------------
 'exit()' -- exit
