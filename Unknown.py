@@ -12,8 +12,14 @@ check = 0
 
 def spellcheck(word):
 	global spell
-	print(spell.candidates(word))
-
+	'''print(spell.candidates(word))
+	print(spell.unknown(word))
+	print(spell[word])'''
+	os.system('clear')
+	if word in spell:
+		adder(word)
+	else:
+		print(f"spelling incorrect\nsuggestions : {spell.candidates(word)}\n")
 
 def adder(word):
 	if word.lower() not in words:
@@ -56,5 +62,5 @@ while True:
 	if check:
 		continue
 	
-	adder(word)
+	
 	spellcheck(word)
