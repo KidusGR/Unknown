@@ -8,7 +8,7 @@ cd Unknown
 ```
 run Unknown:
 
-	Unknown
+	sudo Unknown
 
 ```
 Copyright © by Kidus Gizaw
