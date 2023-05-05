@@ -1,12 +1,19 @@
 #!/usr/bin/python3
 #Just a test
 
+from spellchecker import SpellChecker
 import os
 import time
 
 
+spell = SpellChecker()
 alpha = "abcdefghijklmnopqrstuvwxyz"
 check = 0
+
+def spellcheck(word):
+	global spell
+	print(spell.candidates(word))
+
 
 def adder(word):
 	if word.lower() not in words:
@@ -48,6 +55,6 @@ while True:
 			check = 1
 	if check:
 		continue
-
-	adder(word)
 	
+	adder(word)
+	spellcheck(word)
