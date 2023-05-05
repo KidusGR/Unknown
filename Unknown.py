@@ -12,6 +12,7 @@ console = Console()
 spell = SpellChecker()
 alpha = "abcdefghijklmnopqrstuvwxyz"
 check = 0
+Directory = (open("./Dir").readlines())[0].strip()
 
 
 def printBanner():
@@ -43,7 +44,7 @@ def printInvalid():
 
 def adder(word):
 	if word.lower() not in words:
-		with open("./Data/words", "a") as file:
+		with open(f"{Directory}/Data/words", "a") as file:
 			file.write(f"{word.lower()}\n")
 		os.system('clear')
 		addedLine = Text("\tWord added to the DB\n")
@@ -72,7 +73,7 @@ def printer():
 
 
 while True:
-	words = [d.strip() for d in open("./Data/words", "r").readlines()]
+	words = [d.strip() for d in open(f"{Directory}/Data/words", "r").readlines()]
 	
 	printBanner()
 	check = 0
