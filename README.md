@@ -12,10 +12,7 @@ run Unknown as Unknown.py:
 	Unknown
 
 ```
-```html
-    // color="green"
 ----------------------------------------
-```
         UNKNOWN WORD BARN
 ----------------------------------------
 'exit()' -- exit
