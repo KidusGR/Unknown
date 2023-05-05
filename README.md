@@ -8,7 +8,7 @@ cd Unknown
 ```
 run Unknown:
 
-	./Unknown.py
+	Unknown
 
 ```
 Copyright © by Kidus Gizaw
