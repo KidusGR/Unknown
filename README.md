@@ -12,19 +12,7 @@ run Unknown as Unknown.py:
 	Unknown
 
 ```
-----------------------------------------
-        UNKNOWN WORD BARN
-----------------------------------------
-'exit()' -- exit
-'print()' -- print words(db)
-
-Enter the Word >> 
-
-```
-Second option using args:
-	
-	ep "Write your commit message here"
-	
+<img src="https://imgur.com/E6woZdn">	
 ```
 dev@developer:~$ ep "Write your commit message here"
 [main a4119bc] Write your commit message here
