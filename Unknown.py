@@ -100,6 +100,7 @@ while True:
 	
 	console.print(consoleLine, end="")
 	word = input()
+	
 	if word == 'exit()':
 		exit()
 		break
