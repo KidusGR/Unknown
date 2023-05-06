@@ -6,6 +6,9 @@ import os
 import time
 from rich.console import Console
 from rich.text import Text
+from rich.prompt import Prompt
+import readline
+
 
 
 console = Console()
@@ -17,10 +20,13 @@ username = open("./username").readlines()[0].strip()
 
 def printBanner():
 	banner = Text(("-"*40)+"\n\tUNKNOWN WORD BARN\n"+("-"*40))
-	commands = Text("\n'exit()' -- exit\n'print()' -- print words(db)\n")
+	wordNum = Text(f"\n\nWords - ( {len(words)} )\n")
+	wordNum.stylize("bold yellow")
+	wordNum.stylize("bold green", str(wordNum).index('(')+1, -2)
+	commands = Text("\n'exit()' -- exit Unknown\n'print()' -- Print words(DB)\n")
 	banner.stylize("bold magenta")
 	commands.stylize("bold blue")
-	console.print(banner+commands)
+	console.print(banner+wordNum+commands)
 
 
 def spellcheck(word):
@@ -77,7 +83,7 @@ while True:
 	
 	printBanner()
 	check = 0
-	consoleLine = Text("Enter the Word >> ")
+	consoleLine = Text("Enter Word >> ")
 	consoleLine.stylize("blue")
 	consoleLine.stylize("bold yellow", 0, -3)
 	
