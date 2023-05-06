@@ -29,15 +29,19 @@ def printBanner():
 
 
 def spellcheck(word):
+	misspelled = Text(f'{word}')
+	misspelled.stylize("bold green")
 	line = Text("\tWord Unknown\n")
-	line1 = Text(f"suggestions : {spell.candidates(word)}\n")
+	line1 = Text(f"suggestions for \"")
+	line2 = Text(f"\" : {spell.candidates(word)}\n")
 	line1.stylize("bold yellow")
+	line2.stylize("bold yellow")
 	line.stylize("bold red")
 	os.system('clear')
 	if word in spell:
 		adder(word)
 	else:
-		console.print(line,line1)
+		console.print(line,line1,misspelled,line2)
 
 
 def printInvalid():
@@ -52,14 +56,22 @@ def adder(word):
 		with open(f"/home/{username}/.UnknownData/words", "a") as file:
 			file.write(f"{word.lower()}\n")
 		os.system('clear')
-		addedLine = Text("\tWord added to the DB\n")
+		line = Text(f'{word}')
+		line.stylize("bold yellow")
+		addedLine = Text("Word \"")
+		addedLine1 = Text("\" added to the DB\n")
 		addedLine.stylize("bold green")
-		console.print(addedLine)
+		addedLine1.stylize("bold green")
+		console.print(addedLine,line,addedLine1)
 	else:
 		os.system('clear')
-		alreadyLine = Text("\tWord already in the DB\n")
+		line = Text(f'{word}')
+		line.stylize("bold green")
+		alreadyLine = Text("Word \"")
+		alreadyLine1 = Text("\" already in the DB\n")
 		alreadyLine.stylize("bold yellow")
-		console.print(alreadyLine)
+		alreadyLine1.stylize("bold yellow")
+		console.print(alreadyLine,line,alreadyLine1)
 
 
 def exit():
