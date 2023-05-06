@@ -76,7 +76,7 @@ def adder(word):
 
 def exit():
 	os.system('clear')
-	line = Text(("-"*30)+"\n\tG00D-!3Y3\n"+("-"*30))
+	line = Text(("-"*30)+"\n\tG00D-BY3\n"+("-"*30))
 	line.stylize("bold magenta")
 	console.print(line)
 	time.sleep(1)
