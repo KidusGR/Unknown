@@ -10,7 +10,6 @@ from rich.prompt import Prompt
 import readline
 
 
-
 console = Console()
 spell = SpellChecker()
 alpha = "abcdefghijklmnopqrstuvwxyz"
@@ -20,7 +19,7 @@ username = open("./username").readlines()[0].strip()
 
 def printBanner():
 	banner = Text(("-"*40)+"\n\tUNKNOWN WORD BARN\n"+("-"*40))
-	wordNum = Text(f"\n\nWords - ( {len(words)} )\n")
+	wordNum = Text(f"\n\nYour Words - ( {len(words)} )\n")
 	wordNum.stylize("bold yellow")
 	wordNum.stylize("bold green", str(wordNum).index('(')+1, -2)
 	commands = Text("\n'exit()' -- exit Unknown\n'print()' -- Print words(DB)\n")
@@ -94,6 +93,9 @@ while True:
 		break
 	elif word == 'print()':
 		printer()
+		continue
+	elif word == "":
+		printInvalid()
 		continue
 	for w in word:
 		if w.upper() in alpha.upper():
