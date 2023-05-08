@@ -8,13 +8,14 @@ from rich.console import Console
 from rich.text import Text
 from rich.prompt import Prompt
 import readline
+import getpass
 
 
 console = Console()
 spell = SpellChecker()
 alpha = "abcdefghijklmnopqrstuvwxyz"
 check = 0
-username = open("./username").readlines()[0].strip()
+homedir = os.environ['HOME']
 
 
 def printBanner():
@@ -53,7 +54,7 @@ def printInvalid():
 
 def adder(word):
 	if word.lower() not in words:
-		with open(f"~/.UnknownData/words", "a") as file:
+		with open(f"{homedir}/.UnknownData/words", "a") as file:
 			file.write(f"{word.lower()}\n")
 		os.system('clear')
 		line = Text(f'{word}')
@@ -90,7 +91,7 @@ def printer():
 
 
 while True:
-	words = [d.strip() for d in open(f"~/.UnknownData/words", "r").readlines()]
+	words = [d.strip() for d in open(f"{homedir}/.UnknownData/words", "r").readlines()]
 	
 	printBanner()
 	check = 0
