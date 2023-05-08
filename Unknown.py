@@ -53,7 +53,7 @@ def printInvalid():
 
 def adder(word):
 	if word.lower() not in words:
-		with open(f"/home/{username}/.UnknownData/words", "a") as file:
+		with open(f"~/.UnknownData/words", "a") as file:
 			file.write(f"{word.lower()}\n")
 		os.system('clear')
 		line = Text(f'{word}')
@@ -90,7 +90,7 @@ def printer():
 
 
 while True:
-	words = [d.strip() for d in open(f"/home/{username}/.UnknownData/words", "r").readlines()]
+	words = [d.strip() for d in open(f"~/.UnknownData/words", "r").readlines()]
 	
 	printBanner()
 	check = 0
