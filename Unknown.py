@@ -13,7 +13,7 @@ import getpass
 
 console = Console()
 spell = SpellChecker()
-alpha = "abcdefghijklmnopqrstuvwxyz"
+alpha = "abcdefghijklmnopqrstuvwxyz-'"
 check = 0
 homedir = os.environ['HOME']
 
@@ -100,7 +100,7 @@ while True:
 	consoleLine.stylize("bold yellow", 0, -3)
 	
 	console.print(consoleLine, end="")
-	word = input()
+	word = input().strip()
 	
 	if word == 'exit()':
 		exit()
